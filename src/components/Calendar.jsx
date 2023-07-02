@@ -5,7 +5,7 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import "./Calendar.css";
 function Calendar() {
-  fetch('http://localhost:8080/myevents',{
+  fetch('https://eventscheduler-backend.onrender.com/myevents',{
     method: "get",
     headers:{
       "Content-Type": "application/json",
