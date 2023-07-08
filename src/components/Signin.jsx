@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
     const navigate = useNavigate();
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     // Toast Functions
     const notifyA = (msg) => toast.error(msg);
     const notifyB = (msg) => toast.success(msg);
@@ -39,6 +39,7 @@ const Signup = () => {
             return
         }
         // Sending data to server
+        // fetch("http://localhost:8080/signin", {
         fetch("https://eventscheduler-backend.onrender.com/signin", {
             method: "post",
             headers: {
@@ -55,13 +56,10 @@ const Signup = () => {
                 } else {
                     // notifyB(data.message);
                     notifyB("Signed in Successfully");
-                    console.log(data)
-                    localStorage.setItem("jwtoken", data.token)
-                    localStorage.setItem("user", JSON.stringify(data.user))
-                    // setUserLogin(true);
+                    localStorage.setItem("jtoken", data.jtoken)
                     navigate("/");
                 }
-                console.log(data)
+                // console.log(data)
             })
     }
 

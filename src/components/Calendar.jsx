@@ -3,21 +3,10 @@ import Fullcalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
-import "./Calendar.css";
+// import "./Calendar.css";
 function Calendar() {
-  fetch('https://eventscheduler-backend.onrender.com/myevents',{
-    method: "get",
-    headers:{
-      "Content-Type": "application/json",
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGExNDEwMmE4MTE3NDIwY2Q1OTE0MTkiLCJpYXQiOjE2ODgyODk4MzN9.kJOkUmNFYAvFaJuwOvATLPSI6awVa83TnDvWNk5v9OA"
-    },
-  })
-  .then(res => res.json())
-  .then(data => {
-    console.log(data);
-  })
   return (
-    <div className="calender-view">
+    <div className="calender-view" style={{"marginTop":"1%","border":"2px solid black","padding":"1rem","width":"50%"}}>
       <Fullcalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"

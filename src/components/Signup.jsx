@@ -45,6 +45,7 @@ const Signup = () => {
         //     return
         // }
         // Sending data to server
+        // fetch("http://localhost:8080/signup", {
         fetch("https://eventscheduler-backend.onrender.com/signup", {
             method: "post",
             headers: {
@@ -57,20 +58,15 @@ const Signup = () => {
                 // cnfpassword: values.cnfpassword
             })
         }).then(res => res.json())
-            .then(data => {
-                if (data.error) {
-                    notifyA(data.error);
-                } else {
-                    // notifyB(data.message);
-                    notifyB("Signed in Successfully");
-                    console.log(data)
-                    localStorage.setItem("jwtoken", data.token)
-                    localStorage.setItem("user", JSON.stringify(data.user))
-                    // setUserLogin(true);
-                    navigate("/");
-                }
-                console.log(data)
-            })
+        .then(data => {
+            if (data.error) {
+                notifyA(data.error);
+            }else{
+                notifyB(data.message);
+                navigate("/signin"); 
+            }
+            console.log((data))
+        })
     }
 
     return (
