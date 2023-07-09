@@ -40,8 +40,8 @@ const Signup = () => {
         // }
 
         // Sending data to server
-        fetch("http://localhost:8080/signin", {
-        // fetch("https://eventscheduler-backend.onrender.com/signin", {
+        // fetch("http://localhost:8080/signin", {
+        fetch("https://eventscheduler-backend.onrender.com/signin", {
             method: "post",
             headers: {
                 "Content-Type": "application/json"

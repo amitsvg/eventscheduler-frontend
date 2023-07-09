@@ -21,8 +21,8 @@ const AddEvents = () => {
 
 
     const postData = () => {
-        fetch("http://localhost:8080/createEvent", {
-        // fetch("https://eventscheduler-backend.onrender.com/createEvent", {
+        // fetch("http://localhost:8080/createEvent", {
+        fetch("https://eventscheduler-backend.onrender.com/createEvent", {
             method: "post",
             headers: {
                 "Content-Type": "application/json",

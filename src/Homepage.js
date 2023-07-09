@@ -22,8 +22,8 @@ const Homepage = () => {
 
     // eslint-disable-next-line
     const updateTask = (id) => {
-        // fetch('https://eventscheduler-backend.onrender.com/update', {
-            fetch('http://localhost:8080/update', {
+        fetch('https://eventscheduler-backend.onrender.com/update', {
+            // fetch('http://localhost:8080/update', {
             method: "put",
             headers: {
                 "Content-Type": "application/json",
@@ -50,8 +50,8 @@ const Homepage = () => {
             navigate("/signin");
         }
         else {
-            fetch('http://localhost:8080/myevents', {
-            // fetch('https://eventscheduler-backend.onrender.com/myevents', {
+            // fetch('http://localhost:8080/myevents', {
+            fetch('https://eventscheduler-backend.onrender.com/myevents', {
                 method: "get",
                 headers: {
                     "Content-Type": "application/json",
