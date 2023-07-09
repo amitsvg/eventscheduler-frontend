@@ -2,8 +2,6 @@ import React from 'react'
 // import React, { useState } from 'react'
 
 const Mytask = ({ allEvents, handleUpdate}) => {
-    // const [incomplete, setIncomplete] = useState([]);
-    // const [complete, setComplete] = useState([]);
     
     const complete = [];
     const incomplete = [];
@@ -28,9 +26,11 @@ const Mytask = ({ allEvents, handleUpdate}) => {
             }}>
                 <ul style={{ "width": "50vw", "overflow": "auto" }}>
                     {incomplete.map((event, index) =>
-                        <li key={index} style={{ "border": "2px solid red", "background": "pink", "margin": "1rem", "padding": "0.6rem", "fontSize": "0.8rem" }} >
-                            <p>{event.title}</p>
-                            <p>{event.eventDate}</p>
+                        <li key={index} style={{ "border": "2px solid red", "background": "pink", "margin": "1rem", "padding": "0.6rem", "fontSize": "0.8rem", "width":"100px" }} >
+                            <p style={{"marginBottom":"0px"}}>{event.title}</p>
+                            {/* <p>{event.eventDate}</p> */}
+                            <p style={{"color":"transparent","margin":"0px"}}>{event.eventDate}</p>
+                            <p >{event.eventDate.slice(0,10)}</p>
                             {/* <p>{event._id}</p> */}
                             <button onClick={() => {handleUpdate(event._id);}} >Done</button>
                         </li>
@@ -43,8 +43,9 @@ const Mytask = ({ allEvents, handleUpdate}) => {
                 <ul style={{ "width": "50vw", "overflow": "auto" }}>
                     {complete.map((event, index) =>
                         <li key={index} style={{ "border": "2px solid green", "background": "rgba(154, 243, 0, 0.6)", "margin": "1rem", "padding": "0.6rem", "fontSize": "0.8rem" }} >
-                            <p>{event.title}</p>
-                            <p>{event.eventDate}</p>
+                            <p style={{"marginBottom":"0px"}}>{event.title}</p>
+                            <p style={{"color":"transparent","margin":"0px"}}>{event.eventDate}</p>
+                            <p >{event.eventDate.slice(0,10)}</p>
                         </li>
                     )}
                 </ul>

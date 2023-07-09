@@ -10,6 +10,8 @@ const Homepage = () => {
 
     const navigate = useNavigate();
     const [allEvents, setAllEvents] = useState([]);
+    // const [comp, setcomp] = useState([]);
+    // const [incomp, setincomp] = useState([]);
 
     // Toast Functions
     const notifyA = (msg) => toast.error(msg);
@@ -21,7 +23,7 @@ const Homepage = () => {
     // const updateTask = useCallback((id) => {
     const updateTask = (id) => {
         fetch('https://eventscheduler-backend.onrender.com/update', {
-        // fetch('http://localhost:8080/update', {
+            // fetch('http://localhost:8080/update', {
             method: "put",
             headers: {
                 "Content-Type": "application/json",
@@ -50,7 +52,7 @@ const Homepage = () => {
         }
         else {
             // fetch('http://localhost:8080/myevents', {
-                fetch('https://eventscheduler-backend.onrender.com/myevents', {
+            fetch('https://eventscheduler-backend.onrender.com/myevents', {
                 method: "get",
                 headers: {
                     "Content-Type": "application/json",
@@ -68,8 +70,8 @@ const Homepage = () => {
 
     return (
         <div className='homepage' style={{ "display": "flex", "marginTop": "7%", "border": "2px solid red" }}>
-            <Calendar />
-            <Mytask allEvents={allEvents} handleUpdate={updateTask} />
+            <Calendar allEvents={allEvents} />
+            <Mytask allEvents={allEvents} handleUpdate={updateTask}/>
 
         </div>
     )
