@@ -11,15 +11,26 @@ function Calendar({ allEvents }) {
   const complete = [];
   const incomplete = [];
 
-  allEvents.forEach(event => {
-    if (event.completed) {
-      complete.push(event);
+  const divide = () => {
+    for(let i=0; i<allEvents.length; i++){
+      if (allEvents[i].completed) {
+            complete.push(allEvents[i]);
+          }
+          else {
+            incomplete.push(allEvents[i]);
+          }
     }
-    else {
-      incomplete.push(event);
-    }
-  });
+    // allEvents.forEach(event => {
+    //   if (event.completed) {
+    //     complete.push(event);
+    //   }
+    //   else {
+    //     incomplete.push(event);
+    //   }
+    // });
 
+  }
+  divide();
   // let fh = new Map([
   //   [1, "first"],
   //   [2, "second"],

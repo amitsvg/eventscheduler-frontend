@@ -33,14 +33,15 @@ const Signup = () => {
 
     const postData = () => {
 
-        //checking email
-        if (!emailRegex.test(email)) {
-            notifyA("Invalid Email");
-            return
-        }
+        // //checking email
+        // if (!emailRegex.test(email)) {
+        //     notifyA("Invalid Email");
+        //     return
+        // }
+
         // Sending data to server
-        // fetch("http://localhost:8080/signin", {
-        fetch("https://eventscheduler-backend.onrender.com/signin", {
+        fetch("http://localhost:8080/signin", {
+        // fetch("https://eventscheduler-backend.onrender.com/signin", {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
