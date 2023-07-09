@@ -6,8 +6,8 @@ const AddEvents = () => {
     const notifyA = (msg) => toast.error(msg);
     const notifyB = (msg) => toast.success(msg);
 
-    const [dateValue, setDateValue] = useState();
-    const [titleValue, setTitleValue] = useState();
+    const [dateValue, setDateValue] = useState("");
+    const [titleValue, setTitleValue] = useState("");
     function handleDate(e) {
         const dateValue = e.target.value;
         // console.log("dateValue", dateValue);
