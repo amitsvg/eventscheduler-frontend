@@ -31,7 +31,7 @@ const Mytask = ({ allEvents, handleUpdate}) => {
                         <li key={index} style={{ "border": "2px solid red", "background": "pink", "margin": "1rem", "padding": "0.6rem", "fontSize": "0.8rem" }} >
                             <p>{event.title}</p>
                             <p>{event.eventDate}</p>
-                            <p>{event._id}</p>
+                            {/* <p>{event._id}</p> */}
                             <button onClick={() => {handleUpdate(event._id);}} >Done</button>
                         </li>
                     )}
