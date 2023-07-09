@@ -1,27 +1,34 @@
 import React, { useEffect, useState } from 'react'
 import Calendar from "./components/Calendar";
 import Mytask from './components/Mytask';
+import { useNavigate } from 'react-router-dom';
 
 const Homepage = () => {
+    const navigate = useNavigate();
     const [allEvents, setAllEvents] = useState([]);
-    // const getMyTasks = () => {
+    
     useEffect(() => {
-
-        // fetch('http://localhost:8080/myevents', {
-        fetch('https://eventscheduler-backend.onrender.com/myevents', {
-            method: "get",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer " + localStorage.getItem("jtoken")
-            },
-        })
-            .then(res => res.json())
-            .then(data => {
-                // console.log(data);
-                setAllEvents(data);
+        const token = localStorage.getItem("jtoken");
+        if (!token) {
+            navigate("/signin");
+        }
+        else {
+            fetch('http://localhost:8080/myevents', {
+                // fetch('https://eventscheduler-backend.onrender.com/myevents', {
+                method: "get",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + localStorage.getItem("jtoken")
+                },
             })
-    },[]);
-    // }
+                .then(res => res.json())
+                .then(data => {
+                    // console.log(data);
+                    setAllEvents(data);
+                })
+                .catch(err => console.log(err))
+        }
+    }, [navigate])
 
 
     return (

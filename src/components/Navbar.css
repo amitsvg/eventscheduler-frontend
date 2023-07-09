@@ -18,6 +18,7 @@
 }
 
 .navbar {
+    z-index: 2;
     /* stick to the top */
     position: fixed;
     top:0;
@@ -47,6 +48,7 @@ a{
 .nav-menu a {
     text-decoration: none;
     color: #000000;
+    /* color: #f7705e; */
     font-size: 1.6rem;
 }
 
@@ -54,11 +56,11 @@ a{
     cursor: pointer;
     font-weight: bolder;
     padding: 13px 25px;
-    font-size: 0.8rem;
+    font-size: 1rem;
     border: none;
     color: white;
-    background-color: #db183c;
-    border-radius: 17px;
+    background-color: #cb18db;
+    border-radius: 4px;
     margin-left: 20px;
     transition: all 0.3s ease;
 }

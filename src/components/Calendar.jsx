@@ -6,7 +6,7 @@ import interactionPlugin from "@fullcalendar/interaction";
 // import "./Calendar.css";
 function Calendar() {
   return (
-    <div className="calender-view" style={{"marginTop":"1%","border":"2px solid black","padding":"1rem","width":"50%"}}>
+    <div className="calender-view" style={{"marginTop":"1%","border":"2px solid black","padding":"0.6rem","width":"50%"}}>
       <Fullcalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
@@ -17,9 +17,9 @@ function Calendar() {
         }}
         height={"90vh"}
         events={[
-          { title: 'event 1', date: '2023-07-02' },
-          { title: 'event 1', date: '2023-07-02' },
-          { title: 'event 2', date: '2023-07-04' }
+          { title: 'event 1', date: '2023-07-09' },
+          { title: 'event 1', date: '2023-07-09' },
+          { title: 'event 2', date: '2023-07-11' }
         ]}
       />
     </div>

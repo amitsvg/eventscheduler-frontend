@@ -10,7 +10,7 @@ import { useContext } from 'react'
 
 export default function Navbar({ login }) {
     const navigate = useNavigate();
-    const {setUserLogin} = useContext(LoginContext)
+    const { setUserLogin } = useContext(LoginContext)
 
     const loginStatus = () => {
         const token = localStorage.getItem("jtoken");
@@ -21,7 +21,7 @@ export default function Navbar({ login }) {
             return false;
         }
     }
-    
+
     // useEffect(()=>{
     //     loginStatus();
     // },[login]);
@@ -35,11 +35,12 @@ export default function Navbar({ login }) {
                 </Link>
             </div>
             <ul className='nav-menu'>
-                {loginStatus() && <Link to="/addevent">
-                    <li>
-                        Add Events
-                    </li>
-                </Link>
+                {loginStatus() &&
+                    <Link to="/addevent">
+                        <li>
+                            Add Events
+                        </li>
+                    </Link>
                 }
                 {!loginStatus() && <Link to="/signup"><li>SignUp</li></Link>}
                 {!loginStatus() && <Link to="/signin"><li>SignIn</li></Link>}
