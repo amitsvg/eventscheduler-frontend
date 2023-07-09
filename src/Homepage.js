@@ -60,7 +60,7 @@ const Homepage = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log("data of myeventS", data);
+                    // console.log("all my Events", data);
                     setAllEvents(data);
                 })
                 .catch(err => console.log(err))

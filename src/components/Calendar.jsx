@@ -41,7 +41,7 @@ function Calendar({ allEvents }) {
     }
     // console.log(dt);
   });
-  console.log(" ", sh);
+  // console.log(" ", sh);
 
   // }
 
