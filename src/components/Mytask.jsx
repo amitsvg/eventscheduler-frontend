@@ -1,7 +1,7 @@
 import React from 'react'
 // import React, { useState } from 'react'
 
-const Mytask = ({ allEvents, handleUpdate}) => {
+const Mytask = ({ allEvents, handleUpdate, firstname}) => {
     
     const complete = [];
     const incomplete = [];
@@ -19,7 +19,7 @@ const Mytask = ({ allEvents, handleUpdate}) => {
 
     return (
         <div style={{ "padding": "0.6rem" }}>
-            <h1>My Tasks are displayed here</h1>
+            <h1>My Tasks are displayed here ( <span style={{"color":"blue", "fontSize":"0.9rem"}}>{firstname}</span> )</h1>
             <h2>Task To DO</h2>
             <div className="allTasks" style={{
                 "boxShadow": "0px 14px 60px 0px rgba(247, 112, 94, 0.4)"

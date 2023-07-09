@@ -10,6 +10,7 @@ const Homepage = () => {
 
     const navigate = useNavigate();
     const [allEvents, setAllEvents] = useState([]);
+    const [firstname, setFirstname] = useState("");
     // const [comp, setcomp] = useState([]);
     // const [incomp, setincomp] = useState([]);
 
@@ -19,8 +20,7 @@ const Homepage = () => {
 
 
 
-
-    // const updateTask = useCallback((id) => {
+    // eslint-disable-next-line
     const updateTask = (id) => {
         fetch('https://eventscheduler-backend.onrender.com/update', {
             // fetch('http://localhost:8080/update', {
@@ -42,7 +42,6 @@ const Homepage = () => {
                 // console.log(data)
             })
     }
-    // }, [])
 
 
     useEffect(() => {
@@ -61,17 +60,19 @@ const Homepage = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    // console.log(data);
+                    console.log("data of myeventS", data);
                     setAllEvents(data);
                 })
                 .catch(err => console.log(err))
         }
-    }, [navigate, updateTask]);
+        let fn = allEvents[0]?.postedBy?.name;
+        setFirstname(fn);
+    }, [navigate, updateTask, allEvents]);
 
     return (
         <div className='homepage' style={{ "display": "flex", "marginTop": "7%", "border": "2px solid red" }}>
             <Calendar allEvents={allEvents} />
-            <Mytask allEvents={allEvents} handleUpdate={updateTask}/>
+            <Mytask allEvents={allEvents} handleUpdate={updateTask} firstname={firstname} />
 
         </div>
     )
